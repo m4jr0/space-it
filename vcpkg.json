@@ -1,0 +1,14 @@
+{
+  "name": "space-it",
+  "version": "0.1.0",
+  "description": "A minimalist 2D fighting game coded in C, focused on spacing",
+  "homepage": "https://github.com/m4jr0/space-it/",
+  "dependencies": [
+    {
+      "name": "sdl2"
+    },
+    {
+      "name": "sdl2-image"
+    }
+  ]
+}

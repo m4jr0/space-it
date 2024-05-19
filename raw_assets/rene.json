@@ -1,0 +1,34 @@
+{ "frames": {
+   "rene (animation_idle) 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 64, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 32, "y": 80, "w": 64, "h": 48 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 500
+   },
+   "rene (animation_idle) 1.aseprite": {
+    "frame": { "x": 64, "y": 0, "w": 64, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 32, "y": 80, "w": 64, "h": 48 },
+    "sourceSize": { "w": 192, "h": 192 },
+    "duration": 750
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.6-dev",
+  "image": "rene.png",
+  "format": "RGBA8888",
+  "size": { "w": 128, "h": 48 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "animation_idle", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

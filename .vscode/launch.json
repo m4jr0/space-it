@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // Unix ////////////////////////////////////////////////////////////////
+        {
+            "name": "Space It (build) [Unix]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it",
+            "cwd": "${workspaceFolder}/build/",
+            "preLaunchTask": "cmake_build"
+        },
+        {
+            "name": "Space It (clean + build) [Unix]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it",
+            "cwd": "${workspaceFolder}/build/",
+            "preLaunchTask": "cleanbuild"
+        },
+        {
+            "name": "Space It (no build) [Unix]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it",
+            "cwd": "${workspaceFolder}/build/",
+        },
+        // Windows /////////////////////////////////////////////////////////////
+        {
+            "name": "Space It (build) [Windows]",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it.exe",
+            "cwd": "${workspaceFolder}/build/",
+            "preLaunchTask": "cmake_build"
+        },
+        {
+            "name": "Space It (clean + build) [Windows]",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it.exe",
+            "cwd": "${workspaceFolder}/build/",
+            "preLaunchTask": "cleanbuild"
+        },
+        {
+            "name": "Space It (no build) [Windows]",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/space_it.exe",
+            "cwd": "${workspaceFolder}/build/",
+        }
+    ]
+}

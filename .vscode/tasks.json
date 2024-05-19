@@ -1,0 +1,87 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "create_build_dir",
+            "type": "shell",
+            "linux": {
+                "command": "mkdir",
+                "args": [
+                    "-p",
+                    "./build/"
+                ]
+            },
+            "windows": {
+                "command": "New-Item",
+                "args": [
+                    "./build/",
+                    "-ItemType",
+                    "Directory",
+                    "-Force"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/"
+            }
+        },
+        {
+            // TODO(m4jr0): Update command when running --config will be possible with CMake Tools.
+            "label": "cmake_configure",
+            "command": "cmake",
+            "args": [
+                "-DVCPKG_ROOT=${workspaceFolder}/vcpkg",
+                "-DIS_VCPKG_CLONE=TRUE",
+                ".."
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "dependsOn": [
+                "create_build_dir"
+            ]
+        },
+        {
+            "label": "cmake_build",
+            "type": "cmake",
+            "command": "build",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "dependsOn": [
+                "cmake_configure"
+            ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "linux": {
+                "command": "rm",
+                "args": [
+                    "-rf",
+                    "./build/"
+                ]
+            },
+            "windows": {
+                "command": "Remove-Item",
+                "args": [
+                    "./build/",
+                    "-Recurse",
+                    "-ErrorAction",
+                    "Ignore",
+                    "-Force"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "cleanbuild",
+            "dependsOn": [
+                "clean",
+                "cmake_build"
+            ]
+        }
+    ]
+}
